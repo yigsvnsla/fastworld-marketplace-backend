@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=market_place_db
+      - POSTGRES_USER=yigs
+      - POSTGRES_PASSWORD=123abc
+    ports:
+      - '5435:5432'
+    volumes:
+      # add volumen for init.sql
+      - postgres_data:/var/lib/postgressql
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+
+volumes:
+  postgres_data:
+    driver: local
