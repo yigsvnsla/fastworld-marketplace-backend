@@ -15,7 +15,9 @@ import { RolesGuard } from 'src/guards/roles.guard';
 import CreateCategoriesDto from './DTOs/create-categories.dto';
 import { Public } from 'src/decorators/public.decorator';
 import QueryParamsDto from 'src/common/dtos/query-params.dto';
+import UpdateCategoryDto from './DTOs/update-category.dto';
 
+// todo: revisa los decoradores faltantes
 @Controller('categories')
 export class CategoriesController {
   constructor(private categoriesService: CategoriesService) {}
@@ -24,12 +26,15 @@ export class CategoriesController {
   @Public()
   @UseInterceptors(ClassSerializerInterceptor)
   public async findAll(@Query() queryParams: QueryParamsDto) {
-    return this.categoriesService.findAll(queryParams);
+    return await this.categoriesService.findAll(queryParams);
   }
 
-  // async findById(id: number): Promise<Category> {
-  //   return this.categoryRepository.findOne(id);
-  // }
+  @Get(':id')
+  @Public()
+  @UseInterceptors(ClassSerializerInterceptor)
+  public async findById(id: number, queryParams: QueryParamsDto) {
+    return await this.categoriesService.findById(id, queryParams);
+  }
 
   @Post()
   @Roles(ROLE_ENUM.Admin)
@@ -39,12 +44,11 @@ export class CategoriesController {
     return await this.categoriesService.create(createCategoriesDto);
   }
 
-  // async update(id: number, categoryData: Partial<Category>): Promise<Category> {
-  //   await this.categoryRepository.update(id, categoryData);
-  //   return this.findById(id);
-  // }
+  public async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+    return await this.categoriesService.update(id, updateCategoryDto);
+  }
 
-  // async delete(id: number): Promise<void> {
-  //   await this.categoryRepository.delete(id);
-  // }
+  public async delete(id: number) {
+    return await this.categoriesService.delete(id);
+  }
 }

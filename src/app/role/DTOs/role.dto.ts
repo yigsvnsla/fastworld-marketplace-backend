@@ -7,6 +7,7 @@ import {
   IsString,
 } from 'class-validator';
 import UserDto from '../../users/DTOs/user.dto';
+import Role from '../entity/roles.entity';
 
 export default class RoleDto {
   @IsString()
@@ -24,4 +25,8 @@ export default class RoleDto {
   @IsNotEmptyObject()
   @Type(() => UserDto)
   public user: UserDto;
+
+  constructor(partial: Role) {
+    Object.assign(this, partial);
+  }
 }

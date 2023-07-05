@@ -41,9 +41,8 @@ export default class UserService {
       where: { id },
       relations: ['role'],
     });
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password, ...result } = findUser;
-    return result;
+
+    return new UserDto(findUser);
   }
 
   public async findAllUser(queryParams: QueryParamsDto) {
@@ -60,7 +59,7 @@ export default class UserService {
     return new PageDto(entities, pageMetaDto);
   }
 
-  public async findOneUser(id: number, queryParams: QueryParamsDto) {
+  public async findUser(id: number, queryParams: QueryParamsDto) {
     const findUser = await this.userRepo.findOne({
       where: { id },
       relations: queryParams.relations,
@@ -95,7 +94,7 @@ export default class UserService {
       throw new NotAcceptableException('this username already use');
     }
 
-    const findRole = await this.roleService.findOneRole(role);
+    const findRole = await this.roleService.findRole(role);
     const newProfile = await this.profileService.createProfile(
       createUserDto.profile,
     );
@@ -134,6 +133,7 @@ export default class UserService {
       ...findUser,
       isActive: !findUser.isActive,
     });
+
     return await this.userRepo.save(createUser);
   }
 
@@ -143,6 +143,7 @@ export default class UserService {
       relations: ['role'],
     });
     const isMatch = await bcrypt.compare(pass, findUser.password);
+
     if (!isMatch) {
       throw new UnauthorizedException();
     }
