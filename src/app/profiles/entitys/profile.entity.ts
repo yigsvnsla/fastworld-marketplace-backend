@@ -1,4 +1,4 @@
-import Users from '../../users/entitys/user.entity';
+import User from '../../users/entitys/user.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
 
 @Entity()
@@ -18,6 +18,9 @@ export default class Profile {
   @Column()
   public email: string;
 
-  @OneToOne(() => Users, (user) => user.profile)
-  public users: Users;
+  @OneToOne(() => User, (user) => user.profile)
+  public user: User;
+
+  @Column({ default: true })
+  public isActive: boolean;
 }

@@ -11,9 +11,14 @@ import {
   ValidateNested,
 } from 'class-validator';
 import ProfileDto from '../../../app/profiles/DTOs/profile.dto';
-import Role from 'src/app/role/entity/roles.entity';
+import RoleDto from '../../role/DTOs/role.dto';
 
 export default class UserDto {
+  @IsOptional()
+  @IsNumber()
+  @IsNotEmpty()
+  public id: number;
+
   @IsString()
   @IsNotEmpty()
   public username: string;
@@ -24,21 +29,17 @@ export default class UserDto {
   public password: string;
 
   @IsDefined()
-  @IsNotEmptyObject()
   @IsObject()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ProfileDto)
   public profile: ProfileDto;
 
   @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  @IsNotEmpty()
-  public role: Role;
-
-  @IsOptional()
-  @IsNumber()
-  @IsNotEmpty()
-  public id: number;
+  @Type(() => RoleDto)
+  public role: RoleDto;
 
   @IsOptional()
   @IsBoolean()

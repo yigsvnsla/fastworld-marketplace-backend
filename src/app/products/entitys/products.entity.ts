@@ -2,7 +2,7 @@ import { Category } from './../../categories/entitys/category.entity';
 import {
   Column,
   Entity,
-  JoinColumn,
+  JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -19,9 +19,12 @@ export default class Product {
   public description: string;
 
   @Column()
-  public price: string;
+  public price: number;
 
   @ManyToMany(() => Category, (category) => category.id)
-  @JoinColumn()
-  public categories: Category;
+  @JoinTable()
+  public categories: Category[];
+
+  @Column({ default: true })
+  public isActive: boolean;
 }
