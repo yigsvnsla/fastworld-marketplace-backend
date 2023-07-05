@@ -35,7 +35,7 @@ export class CategoriesService {
       where: { id },
     });
 
-    return new CategoryDto(category);
+    return category;
   }
 
   public async create(category: CreateCategoriesDto) {

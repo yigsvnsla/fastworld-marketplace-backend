@@ -3,8 +3,12 @@ import {
   Body,
   ClassSerializerInterceptor,
   Controller,
+  Delete,
   Get,
+  Param,
+  ParseIntPipe,
   Post,
+  Put,
   Query,
   UseGuards,
   UseInterceptors,
@@ -32,7 +36,10 @@ export class CategoriesController {
   @Get(':id')
   @Public()
   @UseInterceptors(ClassSerializerInterceptor)
-  public async findById(id: number, queryParams: QueryParamsDto) {
+  public async findById(
+    @Param('id', ParseIntPipe) id: number,
+    queryParams: QueryParamsDto,
+  ) {
     return await this.categoriesService.findById(id, queryParams);
   }
 
@@ -44,11 +51,20 @@ export class CategoriesController {
     return await this.categoriesService.create(createCategoriesDto);
   }
 
-  public async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+  @Put(':id')
+  @Roles(ROLE_ENUM.Admin)
+  @UseGuards(RolesGuard)
+  public async update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateCategoryDto: UpdateCategoryDto,
+  ) {
     return await this.categoriesService.update(id, updateCategoryDto);
   }
 
-  public async delete(id: number) {
+  @Delete(':id')
+  @Roles(ROLE_ENUM.Admin)
+  @UseGuards(RolesGuard)
+  public async delete(@Param('id', ParseIntPipe) id: number) {
     return await this.categoriesService.delete(id);
   }
 }
