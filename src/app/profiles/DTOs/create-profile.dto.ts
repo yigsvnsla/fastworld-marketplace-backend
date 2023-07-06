@@ -1,6 +1,6 @@
 import { Type } from 'class-transformer';
 import { IsEmail, IsNotEmpty, IsPhoneNumber, IsString } from 'class-validator';
-import User from 'src/app/users/entitys/user.entity';
+import User from '../../users/entitys/user.entity';
 
 export default class CreateProfileDto {
   @IsNotEmpty()

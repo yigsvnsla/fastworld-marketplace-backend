@@ -15,17 +15,17 @@ import RoleDto from '../../role/DTOs/role.dto';
 
 export default class UserDto {
   @IsOptional()
-  @IsNumber()
   @IsNotEmpty()
+  @IsNumber()
   public id: number;
 
-  @IsString()
   @IsNotEmpty()
+  @IsString()
   public username: string;
 
-  @IsString()
-  @IsNotEmpty()
   @Exclude()
+  @IsNotEmpty()
+  @IsString()
   public password: string;
 
   @IsDefined()

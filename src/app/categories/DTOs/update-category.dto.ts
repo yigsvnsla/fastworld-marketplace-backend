@@ -1,19 +1,18 @@
-import { IsDefined, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { Transform, Type } from 'class-transformer';
+import { Type, Transform } from 'class-transformer';
+import { IsOptional, IsNotEmpty, IsString } from 'class-validator';
 import CategoryDto from './category.dto';
-
-export default class CreateCategoriesDto {
+export default class UpdateCategoryDto {
   @IsOptional()
   @Type(() => CategoryDto)
   public parent?: CategoryDto;
 
-  @IsDefined()
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   @Transform(({ value }) => value.toLowerCase())
   public name: string;
 
-  @IsDefined()
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   @Transform(({ value }) => value.toLowerCase())
