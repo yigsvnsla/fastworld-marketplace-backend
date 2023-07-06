@@ -12,14 +12,11 @@ import CreateUserDto from './DTOs/create-user.dto';
 import { ProfilesService } from '../profiles/profiles.service';
 import { JwtService } from '@nestjs/jwt';
 import RoleService from '../role/roles.service';
-// import UserDto from './DTOs/user.dto';
 import * as bcrypt from 'bcrypt';
-// import * as qs from 'qs';
 import QueryParamsDto from 'src/common/dtos/query-params.dto';
 import { PageMetaDto } from 'src/common/dtos/page-meta.dto';
 import { PageDto } from 'src/common/dtos/page.dto';
 import UserDto from './DTOs/user.dto';
-// import UserDto from './DTOs/user.dto';
 
 @Injectable()
 export default class UserService {
