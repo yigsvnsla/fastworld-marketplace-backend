@@ -48,19 +48,15 @@ export default class UserService {
 
   public async findAllUser(queryParams: QueryParamsDto) {
     const [entities, count] = await Promise.all([
-      this.userRepo.find({
-        order: queryParams.order,
-        relations: queryParams.relations,
-        take: queryParams.take,
-        skip: queryParams.skip,
-        where: queryParams.where,
-      }),
+      this.userRepo.find(queryParams),
       this.userRepo.count(),
     ]);
+
     const pageMetaDto = new PageMetaDto({
       itemCount: count,
       pageOptionsDto: queryParams,
     });
+
     return new PageDto(entities, pageMetaDto);
   }
 
@@ -69,13 +65,12 @@ export default class UserService {
       where: { id },
       relations: queryParams.relations,
     });
+
     if (!findUser) {
       throw new NotFoundException();
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password, ...result } = findUser;
-    return result;
+    return new UserDto(findUser);
   }
 
   public async createUserAdmin(createUserDto: CreateUserDto) {
@@ -95,13 +90,16 @@ export default class UserService {
     const findUser = await this.userRepo.findOneBy({
       username: createUserDto.username,
     });
+
     if (findUser) {
       throw new NotAcceptableException('this username already use');
     }
+
     const findRole = await this.roleService.findOneRole(role);
     const newProfile = await this.profileService.createProfile(
       createUserDto.profile,
     );
+
     const hashPass = await bcrypt.hash(createUserDto.password, saltOrRounds);
     const newUser = this.userRepo.create({
       ...createUserDto,
@@ -109,9 +107,9 @@ export default class UserService {
       profile: newProfile,
       role: findRole,
     });
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password, ...user } = await this.userRepo.save(newUser);
-    return user;
+
+    const user = await this.userRepo.save(newUser);
+    return new UserDto(user);
   }
 
   public async updateOneUser(id: number, body: User) {
@@ -148,7 +146,7 @@ export default class UserService {
     if (!isMatch) {
       throw new UnauthorizedException();
     }
-    console.log(new UserDto(findUser));
+
     return new UserDto(findUser);
   }
 

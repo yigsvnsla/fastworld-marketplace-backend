@@ -1,4 +1,4 @@
-import Product from 'src/app/products/entitys/products.entity';
+import Product from '../../products/entitys/products.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,

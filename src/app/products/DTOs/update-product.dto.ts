@@ -1,14 +1,14 @@
 import { Type } from 'class-transformer';
 import {
-  IsArray,
-  IsNotEmpty,
-  IsNumber,
   IsOptional,
+  IsNotEmpty,
   IsString,
+  IsNumber,
+  IsArray,
 } from 'class-validator';
 import { Category } from 'src/app/categories/entitys/category.entity';
 
-export default class CreateProductDto {
+export default class UpdateProductDto {
   @IsOptional()
   @IsNotEmpty()
   @IsString()
