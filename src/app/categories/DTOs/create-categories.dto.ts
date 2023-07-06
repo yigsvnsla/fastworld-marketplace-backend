@@ -5,7 +5,7 @@ import CategoryDto from './category.dto';
 export default class CreateCategoriesDto {
   @IsOptional()
   @Type(() => CategoryDto)
-  public parent?: CategoryDto;
+  public parent?: Partial<CategoryDto>;
 
   @IsDefined()
   @IsNotEmpty()

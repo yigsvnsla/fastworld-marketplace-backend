@@ -11,12 +11,13 @@ import {
   ManyToOne,
   OneToMany,
   JoinColumn,
+  Relation,
   // OneToMany,
 } from 'typeorm';
 
 @Entity()
 @Tree('adjacency-list')
-export class Category {
+export default class Category {
   @PrimaryGeneratedColumn()
   public id: number;
 
@@ -30,16 +31,16 @@ export class Category {
     nullable: true,
   })
   @JoinColumn()
-  public parent: Category;
+  public parent: Relation<Category>;
 
   @OneToMany(() => Category, (category) => category.parent)
   @JoinColumn()
-  public children: Category[];
+  public children: Relation<Category[]>;
 
   // todo: revisar si es la relación indicada
   @OneToMany(() => Product, (product) => product.categories)
   @JoinColumn()
-  public product: Product;
+  public product: Relation<Product>;
 
   @Column({ default: true })
   public isActive: boolean;

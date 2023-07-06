@@ -9,6 +9,7 @@ import {
 } from 'class-validator';
 import { Type } from 'class-transformer';
 import CreateProfileDto from '../../../app/profiles/DTOs/create-profile.dto';
+import { Relation } from 'typeorm';
 
 export default class CreateUserDto {
   @IsString()
@@ -24,7 +25,7 @@ export default class CreateUserDto {
   @IsObject()
   @ValidateNested()
   @Type(() => CreateProfileDto)
-  public profile: CreateProfileDto;
+  public profile: Relation<CreateProfileDto>;
 
   public role: string;
 }

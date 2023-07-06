@@ -7,7 +7,7 @@ import {
   IsPhoneNumber,
   IsString,
 } from 'class-validator';
-import User from 'src/app/users/entitys/user.entity';
+import User from '../../users/entitys/user.entity';
 
 export default class UpdateProfileDto {
   @IsOptional()

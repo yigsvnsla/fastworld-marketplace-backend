@@ -6,8 +6,8 @@ import {
   IsNumber,
   IsArray,
 } from 'class-validator';
-import { Category } from 'src/app/categories/entitys/category.entity';
-
+// import Category from '../../categories/entitys/category.entity';
+import CategoryDto from '../DTOs/product.dto';
 export default class UpdateProductDto {
   @IsOptional()
   @IsNotEmpty()
@@ -27,8 +27,8 @@ export default class UpdateProductDto {
   @IsOptional()
   @IsNotEmpty()
   @IsArray()
-  @Type(() => Array<Category>)
-  public categories: Category[];
+  @Type(() => Array<CategoryDto>)
+  public categories: CategoryDto[];
 
   // public galerry:any[]
 }

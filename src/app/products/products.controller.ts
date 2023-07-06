@@ -9,14 +9,14 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { Get, Post, Body } from '@nestjs/common';
-import { ProductService } from './products.service';
+import ProductService  from './products.service';
 import CreateProductDto from './DTOs/create-product.dto';
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
+import QueryParamsDto from '../../common/dtos/query-params.dto';
 import UpdateProductDto from './DTOs/update-product.dto';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('products')
-export class ProductsController {
+export default class ProductsController {
   constructor(private productsService: ProductService) {}
 
   @Get()

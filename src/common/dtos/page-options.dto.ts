@@ -1,7 +1,6 @@
-import { OrderBy } from './../../const/page-order-const';
-// import { ApiPropertyOptional } from "@nestjs/swagger";
-import { Type } from 'class-transformer';
 import { IsInt, IsObject, IsOptional, Max, Min } from 'class-validator';
+import { Type } from 'class-transformer';
+import { OrderBy } from './../../const/page-order-const';
 import { Order } from '../../types/page-meta-parameters.type';
 
 /**

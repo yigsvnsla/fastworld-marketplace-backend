@@ -1,4 +1,4 @@
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
+import QueryParamsDto from '../common/dtos/query-params.dto';
 import { PageOptionsDto } from '../common/dtos/page-options.dto';
 
 export interface PageMetaParameters {

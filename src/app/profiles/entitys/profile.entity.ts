@@ -1,5 +1,5 @@
 import User from '../../users/entitys/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, Relation } from 'typeorm';
 
 @Entity()
 export default class Profile {
@@ -19,7 +19,7 @@ export default class Profile {
   public email: string;
 
   @OneToOne(() => User, (user) => user.profile)
-  public user: User;
+  public user: Relation<User>;
 
   @Column({ default: true })
   public isActive: boolean;

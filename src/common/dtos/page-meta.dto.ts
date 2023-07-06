@@ -1,7 +1,6 @@
-// import { ApiProperty } from "@nestjs/swagger";
 import { PageMetaParameters } from '../../types/page-meta-parameters.type';
 
-export class PageMetaDto {
+export default class PageMetaDto {
   // @ApiProperty()
   readonly page: number;
 

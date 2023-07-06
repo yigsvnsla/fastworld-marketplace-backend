@@ -8,11 +8,11 @@ import {
   IsPositive,
   IsString,
 } from 'class-validator';
-import CategoryDto from 'src/app/categories/DTOs/category.dto';
+import CategoryDto from '../DTOs/create-product.dto';
 import Product from '../entitys/products.entity';
-import { Category } from 'src/app/categories/entitys/category.entity';
+// import CategoryDto  from 'src/app/categories/entitys/category.entity';
 
-export default class ProductDto implements Product {
+export default class ProductDto {
   @IsNotEmpty()
   @IsNumber()
   public id: number;
@@ -32,7 +32,7 @@ export default class ProductDto implements Product {
 
   @IsArray()
   @IsInstance(CategoryDto)
-  public categories: Category[];
+  public categories: CategoryDto[];
 
   // @IsArray()
   // @IsUrl()

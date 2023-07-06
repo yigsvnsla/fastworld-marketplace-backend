@@ -33,12 +33,12 @@ export default class CategoryDto {
   @Exclude()
   @IsOptional()
   @ValidateNested()
-  public parent: CategoryDto;
+  public parent: Partial<CategoryDto>;
 
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => CategoryDto)
-  public children: CategoryDto[];
+  public children: Partial<CategoryDto[]>;
 
   // @ValidateNested()
   // @Type(() => ProductDto)

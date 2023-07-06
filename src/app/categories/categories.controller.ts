@@ -1,4 +1,3 @@
-import { CategoriesService } from './categories.service';
 import {
   Body,
   ClassSerializerInterceptor,
@@ -13,17 +12,18 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { ROLE_ENUM } from 'src/const/role.const';
-import { Roles } from 'src/decorators/role.decorator';
-import { RolesGuard } from 'src/guards/roles.guard';
+import { ROLE_ENUM } from '../../const/role.const';
+import { Roles } from '../../decorators/role.decorator';
+import { Public } from '../../decorators/public.decorator';
+import RolesGuard from '../../guards/roles.guard';
+import CategoriesService from './categories.service';
 import CreateCategoriesDto from './DTOs/create-categories.dto';
-import { Public } from 'src/decorators/public.decorator';
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
+import QueryParamsDto from '../../common/dtos/query-params.dto';
 import UpdateCategoryDto from './DTOs/update-category.dto';
 
 // todo: revisa los decoradores faltantes
 @Controller('categories')
-export class CategoriesController {
+export default class CategoriesController {
   constructor(private categoriesService: CategoriesService) {}
 
   @Get()

@@ -8,6 +8,7 @@ import {
   OneToOne,
   JoinColumn,
   ManyToOne,
+  Relation,
 } from 'typeorm';
 
 @Entity()
@@ -26,9 +27,9 @@ export default class User {
 
   @OneToOne(() => Profile, { cascade: true })
   @JoinColumn()
-  public profile: Profile;
+  public profile: Relation<Profile>;
 
   @ManyToOne(() => Role, (role) => role.user)
   @JoinColumn()
-  public role: Role;
+  public role: Relation<Role>;
 }

@@ -1,22 +1,22 @@
-import { ROLE_ENUM } from './../../const/role.const';
 import {
   Injectable,
   NotAcceptableException,
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import User from './entitys/user.entity';
-import { Repository } from 'typeorm';
-import CreateUserDto from './DTOs/create-user.dto';
+import { ROLE_ENUM } from './../../const/role.const';
 import { ProfilesService } from '../profiles/profiles.service';
-import { JwtService } from '@nestjs/jwt';
+import QueryParamsDto from '../../common/dtos/query-params.dto';
+import PageMetaDto from '../../common/dtos/page-meta.dto';
+import PageDto from '../../common/dtos/page.dto';
+import CreateUserDto from './DTOs/create-user.dto';
+import { InjectRepository } from '@nestjs/typeorm';
 import RoleService from '../role/roles.service';
-import * as bcrypt from 'bcrypt';
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
-import { PageMetaDto } from 'src/common/dtos/page-meta.dto';
-import { PageDto } from 'src/common/dtos/page.dto';
+import User from './entitys/user.entity';
+import { JwtService } from '@nestjs/jwt';
+import { Repository } from 'typeorm';
 import UserDto from './DTOs/user.dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export default class UserService {

@@ -1,16 +1,16 @@
 import { Injectable, NotAcceptableException } from '@nestjs/common';
-import { Category } from './entitys/category.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
+import Category from './entitys/category.entity';
+import QueryParamsDto from '../../common/dtos/query-params.dto';
 import CreateCategoriesDto from './DTOs/create-categories.dto';
 import CategoryDto from './DTOs/category.dto';
-import { PageMetaDto } from 'src/common/dtos/page-meta.dto';
-import { PageDto } from 'src/common/dtos/page.dto';
+import PageMetaDto from '../../common/dtos/page-meta.dto';
+import PageDto from '../../common/dtos/page.dto';
 import UpdateCategoryDto from './DTOs/update-category.dto';
 
 @Injectable()
-export class CategoriesService {
+export default class CategoriesService {
   constructor(
     @InjectRepository(Category) private categoriesRepo: Repository<Category>,
   ) {}

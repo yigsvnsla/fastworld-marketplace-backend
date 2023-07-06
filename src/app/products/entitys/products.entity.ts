@@ -1,4 +1,4 @@
-import { Category } from './../../categories/entitys/category.entity';
+import Category  from './../../categories/entitys/category.entity';
 import {
   Column,
   Entity,

@@ -6,7 +6,7 @@ import {
   IsOptional,
   IsString,
 } from 'class-validator';
-import { Category } from 'src/app/categories/entitys/category.entity';
+import CategoryDto from '../../categories/DTOs/category.dto';
 
 export default class CreateProductDto {
   @IsOptional()
@@ -27,8 +27,8 @@ export default class CreateProductDto {
   @IsOptional()
   @IsNotEmpty()
   @IsArray()
-  @Type(() => Array<Category>)
-  public categories: Category[];
+  @Type(() => Array<CategoryDto>)
+  public categories: CategoryDto[];
 
   // public galerry:any[]
 }

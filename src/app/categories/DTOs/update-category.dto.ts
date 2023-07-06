@@ -1,10 +1,11 @@
 import { Type, Transform } from 'class-transformer';
 import { IsOptional, IsNotEmpty, IsString } from 'class-validator';
 import CategoryDto from './category.dto';
+
 export default class UpdateCategoryDto {
   @IsOptional()
   @Type(() => CategoryDto)
-  public parent?: CategoryDto;
+  public parent?: Partial<CategoryDto>;
 
   @IsOptional()
   @IsNotEmpty()

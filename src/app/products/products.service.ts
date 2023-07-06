@@ -1,14 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import Product from './entitys/products.entity';
-import { Repository } from 'typeorm';
-import { InjectRepository } from '@nestjs/typeorm';
-import ProductDto from './DTOs/product.dto';
+import QueryParamsDto from '../../common/dtos/query-params.dto';
 import CreateProductDto from './DTOs/create-product.dto';
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
 import UpdateProductDto from './DTOs/update-product.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import Product from './entitys/products.entity';
+import { Injectable } from '@nestjs/common';
+import ProductDto from './DTOs/product.dto';
+import { Repository } from 'typeorm';
 
 @Injectable()
-export class ProductService {
+export default class ProductService {
   constructor(
     @InjectRepository(Product) private productRepo: Repository<Product>,
   ) {}

@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
-import Product from 'src/app/products/entitys/products.entity';
-import User from 'src/app/users/entitys/user.entity';
+import { Relation } from 'typeorm';
+import UserDto from '../../users/DTOs/user.dto';
 
 export default class ProfileDto {
   @IsNotEmpty()
@@ -20,10 +20,10 @@ export default class ProfileDto {
   @IsString()
   public email: string;
 
-  @Type(() => User)
-  public user: User;
+  @Type(() => UserDto)
+  public user: Relation<UserDto>;
 
-  constructor(partial: Partial<Product>) {
+  constructor(partial: Partial<ProfileDto>) {
     Object.assign(this, partial);
   }
 }

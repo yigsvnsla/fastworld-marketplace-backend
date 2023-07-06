@@ -6,7 +6,7 @@ import { Injectable } from '@nestjs/common';
 import UserService from '../users/users.service';
 import User from '../users/entitys/user.entity';
 @Injectable()
-export class AuthService {
+export default class AuthService {
   constructor(private userService: UserService) {}
 
   public async validateUser(username: string, password: string) {

@@ -10,7 +10,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { ProfilesService } from './profiles.service';
-import QueryParamsDto from 'src/common/dtos/query-params.dto';
+import QueryParamsDto from '../../common/dtos/query-params.dto';
 import CreateProfileDto from './DTOs/create-profile.dto';
 import UpdateProfileDto from './DTOs/update-profile.dto';
 
