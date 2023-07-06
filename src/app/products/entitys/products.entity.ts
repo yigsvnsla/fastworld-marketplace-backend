@@ -5,6 +5,7 @@ import {
   JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
+  Relation,
 } from 'typeorm';
 
 @Entity()
@@ -23,7 +24,7 @@ export default class Product {
 
   @ManyToMany(() => Category, (category) => category.id)
   @JoinTable()
-  public categories: Category[];
+  public categories: Relation<Category[]>;
 
   @Column({ default: true })
   public isActive: boolean;
