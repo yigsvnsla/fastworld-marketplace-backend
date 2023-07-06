@@ -7,22 +7,13 @@ import CreateCategoriesDto from './DTOs/create-categories.dto';
 import CategoryDto from './DTOs/category.dto';
 import { PageMetaDto } from 'src/common/dtos/page-meta.dto';
 import { PageDto } from 'src/common/dtos/page.dto';
+import UpdateCategoryDto from './DTOs/update-category.dto';
 
 @Injectable()
 export class CategoriesService {
   constructor(
     @InjectRepository(Category) private categoriesRepo: Repository<Category>,
   ) {}
-
-  public async create(category: CreateCategoriesDto) {
-    const findNewCategory = await this.categoriesRepo.findOneBy(category);
-    if (findNewCategory) {
-      throw new NotAcceptableException('Category Already Exist');
-    }
-    const createCategory = this.categoriesRepo.create(category);
-    const createdCategory = await this.categoriesRepo.save(createCategory);
-    return new CategoryDto(createdCategory);
-  }
 
   public async findAll(queryParams: QueryParamsDto) {
     const [entities, count] = await Promise.all([
@@ -34,6 +25,48 @@ export class CategoriesService {
       itemCount: count,
       pageOptionsDto: queryParams,
     });
+
     return new PageDto(entities, pageMetaDto);
+  }
+
+  public async findById(id, queryParams: QueryParamsDto) {
+    const category = await this.categoriesRepo.findOne({
+      ...queryParams,
+      where: { id },
+    });
+
+    return category;
+  }
+
+  public async create(category: CreateCategoriesDto) {
+    const findNewCategory = await this.categoriesRepo.findOneBy(category);
+
+    if (findNewCategory) {
+      throw new NotAcceptableException('Category Already Exist');
+    }
+
+    const createCategory = this.categoriesRepo.create(category);
+    const createdCategory = await this.categoriesRepo.save(createCategory);
+    return new CategoryDto(createdCategory);
+  }
+
+  public async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+    const category = await this.categoriesRepo.findOne({ where: { id } });
+    const updatedCategory = await this.categoriesRepo.save({
+      ...category,
+      ...updateCategoryDto,
+    });
+
+    return new CategoryDto(updatedCategory);
+  }
+
+  public async delete(id: number) {
+    const category = await this.categoriesRepo.findOne({ where: { id } });
+    const updatedCategory = await this.categoriesRepo.save({
+      ...category,
+      isActive: false,
+    });
+
+    return new CategoryDto(updatedCategory);
   }
 }

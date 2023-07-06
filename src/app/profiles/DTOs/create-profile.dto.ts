@@ -1,19 +1,26 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsEmail, IsNotEmpty, IsPhoneNumber, IsString } from 'class-validator';
+import User from '../../users/entitys/user.entity';
 
 export default class CreateProfileDto {
-  @IsString()
   @IsNotEmpty()
+  @IsString()
   public firstName: string;
 
-  @IsString()
   @IsNotEmpty()
+  @IsString()
   public lastName: string;
 
-  @IsString()
   @IsNotEmpty()
+  @IsString()
+  @IsPhoneNumber()
   public phone: string;
 
-  @IsString()
   @IsNotEmpty()
+  @IsString()
+  @IsEmail()
   public email: string;
+
+  @Type(() => User)
+  public users: User;
 }

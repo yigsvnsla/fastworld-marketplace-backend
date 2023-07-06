@@ -66,7 +66,7 @@ export default class UsersController {
     @Param('id') id: number,
     @Query() queryParams: QueryParamsDto,
   ) {
-    return await this.usersService.findOneUser(id, queryParams);
+    return await this.usersService.findUser(id, queryParams);
   }
 
   @Roles(ROLE_ENUM.Admin, ROLE_ENUM.Manager)

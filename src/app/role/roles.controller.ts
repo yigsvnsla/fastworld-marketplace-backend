@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import RoleService from './roles.service';
-import Role from './entity/roles.entity';
 import CreateRoleDto from './DTOs/create-role.dto';
 
 @Controller('role')
@@ -8,14 +7,17 @@ export default class RoleController {
   constructor(private roleService: RoleService) {}
 
   @Get()
-  public async findAllRoles(): Promise<Role[]> {
-    return await this.roleService.findAllRole();
+  public async findAllRoles() {
+    return await this.roleService.findAllRoles();
+  }
+
+  @Get(':type')
+  public async findRole(@Param('type') type: string) {
+    return this.roleService.findRole(type);
   }
 
   @Post()
-  public async createOneRole(
-    @Body() createRoleDto: CreateRoleDto,
-  ): Promise<Role> {
+  public async createRole(@Body() createRoleDto: CreateRoleDto) {
     return this.roleService.createRole(createRoleDto);
   }
 }

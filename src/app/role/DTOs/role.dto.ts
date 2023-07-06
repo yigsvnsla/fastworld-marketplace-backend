@@ -1,6 +1,15 @@
-import { IsDefined, IsNotEmpty, IsString } from 'class-validator';
+import { Type } from 'class-transformer';
+import {
+  IsDefined,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsObject,
+  IsString,
+} from 'class-validator';
+import UserDto from '../../users/DTOs/user.dto';
+import Role from '../entity/roles.entity';
 
-export default class CreateRoleDto {
+export default class RoleDto {
   @IsString()
   @IsNotEmpty()
   @IsDefined()
@@ -10,4 +19,14 @@ export default class CreateRoleDto {
   @IsNotEmpty()
   @IsDefined()
   public description: string;
+
+  @IsDefined()
+  @IsObject()
+  @IsNotEmptyObject()
+  @Type(() => UserDto)
+  public user: UserDto;
+
+  constructor(partial: Role) {
+    Object.assign(this, partial);
+  }
 }

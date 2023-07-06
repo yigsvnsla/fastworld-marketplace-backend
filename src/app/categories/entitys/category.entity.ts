@@ -1,4 +1,4 @@
-import Product from 'src/app/products/entitys/products.entity';
+import Product from '../../products/entitys/products.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -36,7 +36,11 @@ export class Category {
   @JoinColumn()
   public children: Category[];
 
+  // todo: revisar si es la relación indicada
   @OneToMany(() => Product, (product) => product.categories)
   @JoinColumn()
   public product: Product;
+
+  @Column({ default: true })
+  public isActive: boolean;
 }
