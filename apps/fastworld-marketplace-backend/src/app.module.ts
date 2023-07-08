@@ -10,6 +10,7 @@ import { Module } from '@nestjs/common';
 import AppService from './app.service';
 import { DataSource } from 'typeorm';
 import env from './configs/env';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
@@ -22,6 +23,12 @@ import env from './configs/env';
       cache: true,
       load: [env],
     }),
+    ClientsModule.register([
+      {
+        name:'AUTH_SERVICE',
+        transport: Transport.TCP
+      }
+    ])
   ],
   controllers: [AppController],
   providers: [AppService],
