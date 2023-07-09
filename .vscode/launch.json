@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "type": "node",
+      "request": "launch",
+      "name": "APP AUTH",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "run",
+        "start:debug",
+        "auth",
+        "--",
+        "--inspect-brk"
+      ],
+      "console": "integratedTerminal",
+      "restart": true,
+      "autoAttachChildProcesses": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "APP APP MARKETPLACE",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start:debug",
+        "auth",
+        "fastworld-marketplace-backend",
+        "--",
+        "--inspect-brk"
+      ],
+      "console": "integratedTerminal",
+      "restart": true,
+      "autoAttachChildProcesses": true
+    },
+  ]
+}
