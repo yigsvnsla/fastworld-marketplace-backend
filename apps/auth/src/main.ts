@@ -6,7 +6,11 @@ async function bootstrap() {
     AuthModule,
     {
       transport: Transport.TCP,
+      options:{
+        // port:3100
+      }
     },
   );
+  await app.listen();
 }
 bootstrap();

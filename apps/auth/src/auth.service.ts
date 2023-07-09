@@ -1,8 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class AuthService {
-  getHello(): string {
-    return 'Hello World!';
+  public getNums(nums: number[]): Observable<number[]> {
+    return of(nums);
   }
 }

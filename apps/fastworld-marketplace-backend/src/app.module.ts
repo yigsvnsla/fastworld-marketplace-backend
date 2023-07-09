@@ -23,12 +23,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       cache: true,
       load: [env],
     }),
-    ClientsModule.register([
-      {
-        name:'AUTH_SERVICE',
-        transport: Transport.TCP
-      }
-    ])
   ],
   controllers: [AppController],
   providers: [AppService],

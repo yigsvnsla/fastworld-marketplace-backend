@@ -9,9 +9,12 @@ import LocalStrategy from './strategys/local.strategy';
 import JwtStrategy  from './strategys/jwt.strategy';
 import JwtAuthGuard from '../../guards/jwt.guard';
 import app_env from '../../configs/env';
+import { AUTH_SERVICE } from '../../microservices-config/auth-service.config';
+import { ClientsModule } from '@nestjs/microservices';
 
 @Module({
   imports: [
+    ClientsModule.register([AUTH_SERVICE]),
     UsersModule,
     JwtModule.register({
       global: true,

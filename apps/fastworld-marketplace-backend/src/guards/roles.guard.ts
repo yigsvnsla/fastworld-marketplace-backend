@@ -5,7 +5,7 @@ import { ROLES_KEY } from '../decorators/role.decorator';
 import User from '../app/users/entitys/user.entity';
 
 @Injectable()
-export default class RolesGuard implements CanActivate {
+export class RolesGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
