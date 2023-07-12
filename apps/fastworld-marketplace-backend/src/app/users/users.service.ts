@@ -6,13 +6,13 @@ import {
 } from '@nestjs/common';
 import { ROLE_ENUM } from './../../const/role.const';
 import { ProfilesService } from '../profiles/profiles.service';
-import QueryParamsDto from '../../common/dtos/query-params.dto';
-import PageMetaDto from '../../common/dtos/page-meta.dto';
-import PageDto from '../../common/dtos/page.dto';
-import CreateUserDto from './DTOs/create-user.dto';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
+import PageMetaDto from '../../../../../common/dto/pagination/page-meta.dto';
+import PageDto from '../../../../../common/dto/pagination/page.dto';
+import CreateUserDto from '../../../../../common/dto/user/create-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import RoleService from '../role/roles.service';
-import User from './entitys/user.entity';
+import User from '../../../../auth/src/entitys/user.entity';
 import { JwtService } from '@nestjs/jwt';
 import { Repository } from 'typeorm';
 import UserDto from './DTOs/user.dto';

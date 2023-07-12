@@ -1,8 +1,8 @@
-import User from '../../users/entitys/user.entity';
+import { User } from '../../../../../auth/src/entitys/user.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, Relation } from 'typeorm';
 
 @Entity()
-export default class Role {
+export class Role {
   @PrimaryGeneratedColumn()
   public id: number;
 

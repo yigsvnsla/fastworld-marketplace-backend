@@ -1,6 +1,6 @@
 import Profile from '../../app/profiles/entitys/profile.entity';
 import Role from '../../app/role/entity/roles.entity';
-import User from '../../app/users/entitys/user.entity';
+import User from '../../../../auth/src/entitys/user.entity';
 import { ROLE_ENUM } from '../../const/role.const';
 import { DataSource, Repository } from 'typeorm';
 import { Seeder, SeederFactoryManager } from 'typeorm-extension';

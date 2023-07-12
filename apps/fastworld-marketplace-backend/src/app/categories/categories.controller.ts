@@ -13,12 +13,12 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ROLE_ENUM } from '../../const/role.const';
-import { Roles } from '../../decorators/role.decorator';
-import { Public } from '../../decorators/public.decorator';
-import { RolesGuard } from '../../guards/roles.guard';
+import { Roles } from '../../../../../decorators/role.decorator';
+import { Public } from '../../../../../decorators/public.decorator';
+import { RolesGuard } from '../../../../../guards/roles.guard';
 import CategoriesService from './categories.service';
 import CreateCategoriesDto from './DTOs/create-categories.dto';
-import QueryParamsDto from '../../common/dtos/query-params.dto';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import UpdateCategoryDto from './DTOs/update-category.dto';
 
 // todo: revisa los decoradores faltantes

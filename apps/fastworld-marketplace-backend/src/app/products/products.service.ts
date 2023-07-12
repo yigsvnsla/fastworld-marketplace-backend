@@ -1,4 +1,4 @@
-import QueryParamsDto from '../../common/dtos/query-params.dto';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import CreateProductDto from './DTOs/create-product.dto';
 import UpdateProductDto from './DTOs/update-product.dto';
 import { InjectRepository } from '@nestjs/typeorm';

@@ -11,7 +11,7 @@ import {
 import { Get, Post, Body } from '@nestjs/common';
 import ProductService  from './products.service';
 import CreateProductDto from './DTOs/create-product.dto';
-import QueryParamsDto from '../../common/dtos/query-params.dto';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import UpdateProductDto from './DTOs/update-product.dto';
 
 @UseInterceptors(ClassSerializerInterceptor)

@@ -2,8 +2,8 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import Profile from './entitys/profile.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import CreateProfileDto from './DTOs/create-profile.dto';
-import QueryParamsDto from '../../common/dtos/query-params.dto';
+import CreateProfileDto from '../../../../../common/dto/profile/create-profile.dto';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import ProfileDto from './DTOs/profile.dto';
 import UpdateProfileDto from './DTOs/update-profile.dto';
 

@@ -1,0 +1,23 @@
+{
+    "_id": "8080c122-ae97-4e2d-a4db-e03e29ceaea1",
+    "colName": "auth",
+    "created": "2023-07-09T17:14:36.985Z",
+    "sortNum": 10000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "10419201-d2fa-42b0-b534-fcaec75c517a",
+            "colId": "8080c122-ae97-4e2d-a4db-e03e29ceaea1",
+            "containerId": "",
+            "name": "PostAuth",
+            "url": "{{URL}}:{{PORT}}/api/auth",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-07-09T17:18:47.836Z",
+            "modified": "2023-07-09T17:20:20.607Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

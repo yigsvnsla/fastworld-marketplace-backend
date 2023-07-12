@@ -1,14 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { MessagePattern, EventPattern } from '@nestjs/microservices';
-import { Observable, of } from 'rxjs';
+import { EventPattern } from '@nestjs/microservices';
+import { EventPatterns } from 'common/enum/event-pattern.enum';
 
-@Controller()
+@Controller('test')
 export class AuthController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+  ) { }
 
-  @EventPattern('nums')
-  public getNums(nums: number[]): Observable<number[]> {
-    return this.authService.getNums(nums);
+  @EventPattern(`${EventPatterns.SING_IN}`)
+  public singin(req: any) {
+    return this.authService.singin(req.user);
   }
 }

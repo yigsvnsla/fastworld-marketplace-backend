@@ -55,7 +55,7 @@ export const DATA_SOURCE_OPTIONS: DataSourceOptions &
   dropSchema: false,
   logging: false,
   migrationsTableName: 'migrations',
-  entities: [path.join(__dirname, '..', 'app', '**', '*.entity{.ts,.js}')],
+  // entities: [path.join(__dirname, '..', 'app', '**', '*.entity{.ts,.js}')],
   migrations: [
     path.join(__dirname, '..', 'database', 'migrations', '**', '*{.ts,.js}'),
   ],

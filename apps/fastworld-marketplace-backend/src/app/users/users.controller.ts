@@ -12,12 +12,12 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import UsersService from './users.service';
-import CreateUserDto from './DTOs/create-user.dto';
-import { Public } from '../../decorators/public.decorator';
-import { Roles } from '../../decorators/role.decorator';
+import CreateUserDto from '../../../../../common/dto/user/create-user.dto';
+import { Public } from '../../../../../decorators/public.decorator';
+import { Roles } from '../../../../../decorators/role.decorator';
 import { ROLE_ENUM } from '../../const/role.const';
-import { RolesGuard } from '../../guards/roles.guard';
-import QueryParamsDto from '../../common/dtos/query-params.dto';
+import { RolesGuard } from '../../../../../guards/roles.guard';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import { Headers } from '@nestjs/common';
 import { Response } from 'express';
 

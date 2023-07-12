@@ -2,11 +2,11 @@ import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import Category from './entitys/category.entity';
-import QueryParamsDto from '../../common/dtos/query-params.dto';
+import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import CreateCategoriesDto from './DTOs/create-categories.dto';
 import CategoryDto from './DTOs/category.dto';
-import PageMetaDto from '../../common/dtos/page-meta.dto';
-import PageDto from '../../common/dtos/page.dto';
+import PageMetaDto from '../../../../../common/dto/pagination/page-meta.dto';
+import PageDto from '../../../../../common/dto/pagination/page.dto';
 import UpdateCategoryDto from './DTOs/update-category.dto';
 
 @Injectable()

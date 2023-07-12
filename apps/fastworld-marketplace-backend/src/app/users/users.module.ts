@@ -3,7 +3,7 @@ import UsersService from './users.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 import UsersController from './users.controller';
-import User from './entitys/user.entity';
+import { User } from '../../../../auth/src/entitys/user.entity';
 import ProfilesModule from '../profiles/profiles.module';
 import RoleModule from '../role/roles.module';
 
@@ -13,4 +13,4 @@ import RoleModule from '../role/roles.module';
   providers: [UsersService, ConfigService],
   exports: [UsersService],
 })
-export default class UsersModule {}
+export default class UsersModule { }

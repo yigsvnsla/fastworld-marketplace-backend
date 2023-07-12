@@ -1,6 +1,6 @@
 import { setSeederFactory } from 'typeorm-extension';
 import Profile from '../../app/profiles/entitys/profile.entity';
-import CreateProfileDto from '../../app/profiles/DTOs/create-profile.dto';
+import CreateProfileDto from '../../../../../common/dto/profile/create-profile.dto';
 
 export default setSeederFactory(Profile, (faker) => {
   const profile = new CreateProfileDto();
