@@ -1,7 +1,7 @@
 import { IsInt, IsObject, IsOptional, Max, Min } from 'class-validator';
 import { Type } from 'class-transformer';
-import { OrderBy } from '../../../apps/fastworld-marketplace-backend/src/const/page-order-const';
 import { Order } from '../../../types/page-meta-parameters.type';
+import { PAGE_ORDER } from 'common/enum/page-order.enum';
 
 /**
  * todo: create ony string validator to prop "Order"
@@ -9,7 +9,7 @@ import { Order } from '../../../types/page-meta-parameters.type';
 export class PageOptionsDto {
   @IsOptional()
   @IsObject()
-  public readonly order: Order<OrderBy>;
+  public readonly order: Order<PAGE_ORDER>;
 
   @Type(() => Number)
   @IsInt()

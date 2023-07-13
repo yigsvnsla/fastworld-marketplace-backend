@@ -1,5 +1,5 @@
 import { SetMetadata } from '@nestjs/common';
-import { ROLE_ENUM } from '../apps/fastworld-marketplace-backend/src/const/role.const';
+import { USER_ROLE } from 'common/enum/user-role.enum';
 
 export const ROLES_KEY = 'roles';
-export const Roles = (...roles: ROLE_ENUM[]) => SetMetadata(ROLES_KEY, roles);
+export const Roles = (...roles: USER_ROLE[]) => SetMetadata(ROLES_KEY, roles);

@@ -1,4 +1,4 @@
-import { CategoriesModule } from './app/categories/categories.module';
+import { CategoriesModule } from './categories/categories.module';
 import ProductsModule from './app/products/products.module';
 import { DATA_SOURCE_OPTIONS } from './database/data-source';
 import UsersModule from './app/users/users.module';

@@ -13,7 +13,7 @@ export class RoleDto {
   @IsString()
   @IsNotEmpty()
   @IsDefined()
-  public type: string;
+  public type: number;
 
   @IsString()
   @IsNotEmpty()

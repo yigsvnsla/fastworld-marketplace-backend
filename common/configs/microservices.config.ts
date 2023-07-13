@@ -17,3 +17,10 @@ export const USER_CLIENT_PROVIDER: ClientProviderOptions = {
   }
 }
 
+export const PRODUCT_CLIENT_PROVIDER: ClientProviderOptions = {
+  name: `${ClientPattern.PRODUCT_SERVICE}`,
+  transport: Transport.TCP,
+  options:{
+    port:ClientPattern.PRODUCT_SERVICE
+  }
+}
