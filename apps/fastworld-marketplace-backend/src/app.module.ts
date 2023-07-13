@@ -10,7 +10,7 @@ import AppService from './app.service';
 import { DataSource } from 'typeorm';
 import env from '../../../common/configs/env';
 import { ClientsModule } from '@nestjs/microservices';
-import { AUTH_PROVIDER } from 'common/configs/microservices.config';
+import { AUTH_CLIENT_PROVIDER } from 'common/configs/microservices.config';
 
 @Module({
   imports: [

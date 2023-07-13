@@ -23,7 +23,9 @@ export class ProfileDto {
   @Type(() => UserDto)
   public user: Relation<UserDto>;
 
-  constructor(partial: Partial<ProfileDto>) {
+  constructor(
+    partial: Partial<ProfileDto>
+  ) {
     Object.assign(this, partial);
   }
 }

@@ -40,4 +40,10 @@ export class UpdateProfileDto {
   @IsNotEmpty()
   @IsBoolean()
   public isActive: boolean;
+
+  constructor(
+    partial: Partial<UpdateProfileDto>
+  ) {
+    Object.assign(this, partial);
+  }
 }

@@ -1,7 +1,7 @@
 import { ClientProviderOptions, Transport } from "@nestjs/microservices";
 import { ClientPattern } from "common/enum/clients-pattern.enum";
 
-export const AUTH_PROVIDER: ClientProviderOptions = {
+export const AUTH_CLIENT_PROVIDER: ClientProviderOptions = {
   name: `${ClientPattern.AUTH_SERVICE}`,
   transport: Transport.TCP,
   options:{

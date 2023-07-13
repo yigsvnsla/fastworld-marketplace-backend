@@ -1,7 +1,16 @@
-import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import * as path from 'path';
-import { DataSource, DataSourceOptions } from 'typeorm';
-import { SeederOptions } from 'typeorm-extension';
+import { DataSourceOptionsCustom } from 'types/data-source.type';
+import { User } from '../entitys/user.entity';
+import { Role } from '../entitys/roles.entity';
+import { Profile } from '../entitys/profile.entity';
+import profileFactory from './factories/profile.factory';
+// import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+// import { DataSource, DataSourceOptions } from 'typeorm';
+// import { SeederOptions } from 'typeorm-extension';
+// import { DataSourceOptionsCustom } from 'types/data-source.type';
+// import { HistorySession } from '../entitys/history-sessions.entity';
+// import RoleSeeder from './seeds/role.seed';
+// import OwnerSeeder from './seeds/owner.seed';
+// import profileFactory from './factories/profile.factory';
 
 // export const DATA_SOURCE_OPTIONS: DataSourceOptions &
 //   SeederOptions &
@@ -41,38 +50,27 @@ import { SeederOptions } from 'typeorm-extension';
 //   ],
 // };
 
-export const DATA_SOURCE_OPTIONS: DataSourceOptions &
-  SeederOptions &
-  TypeOrmModuleOptions = {
+export const USER_SOURCE_OPTIONS: DataSourceOptionsCustom = {
   type: 'sqlite',
-  database: path.join('db', 'db.sqlite'),
-  synchronize: false,
-  migrationsRun: false,
-  autoLoadEntities: false,
-  dropSchema: false,
-  logging: false,
+  database: '../../../../db/user/user.db.sqlite',
+  synchronize: true,
+  migrationsRun: true,
+  autoLoadEntities: true,
+  dropSchema: true,
+  logging: true,
   migrationsTableName: 'migrations',
-  // entities: [path.join(__dirname, '..', 'app', '**', '*.entity{.ts,.js}')],
+  entities: [
+    User,
+    Role,
+    Profile
+  ],
   migrations: [
-    path.join(__dirname, '..', 'database', 'migrations', '**', '*{.ts,.js}'),
+
   ],
   seeds: [
-    // RoleSeeder,
-    // OwnerSeeder,
-    // path.join(__dirname, '..', 'database', 'seeds', '**', '*.seed{.ts,.js}'),
+
   ],
   factories: [
-    // profileFactory,
-    // path.join(
-    //   __dirname,
-    //   '..',
-    //   'database',
-    //   'factories',
-    //   '**',
-    //   '*.factory{.ts,.js}',
-    // ),
+    profileFactory
   ],
 };
-
-const dataSource = new DataSource(DATA_SOURCE_OPTIONS);
-export default dataSource;

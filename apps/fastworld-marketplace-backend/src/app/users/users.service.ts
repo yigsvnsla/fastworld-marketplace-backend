@@ -4,7 +4,7 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { ROLE_ENUM } from './../../const/role.const';
+import { ROLE_ENUM } from '../../const/role.const';
 import { ProfilesService } from '../profiles/profiles.service';
 import QueryParamsDto from '../../../../../common/dto/pagination/query-params.dto';
 import PageMetaDto from '../../../../../common/dto/pagination/page-meta.dto';

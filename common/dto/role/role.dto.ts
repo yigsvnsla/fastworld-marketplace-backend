@@ -20,6 +20,11 @@ export class RoleDto {
   @IsDefined()
   public description: string;
 
+  @IsString()
+  @IsNotEmpty()
+  @IsDefined()
+  public name: string
+
   @IsDefined()
   @IsObject()
   @IsNotEmptyObject()

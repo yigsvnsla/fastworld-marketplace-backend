@@ -23,4 +23,10 @@ export class CreateProfileDto {
 
   @Type(() => UserDto)
   public users: UserDto;
+
+  constructor(
+    partial: Partial<CreateProfileDto>
+  ) {
+    Object.assign(this, partial);
+  }
 }
