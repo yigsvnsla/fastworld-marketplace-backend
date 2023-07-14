@@ -1,7 +1,7 @@
 import { IsInt, IsObject, IsOptional, Max, Min } from 'class-validator';
 import { Type } from 'class-transformer';
 import { Order } from '../../../types/page-meta-parameters.type';
-import { PAGE_ORDER } from 'common/enum/page-order.enum';
+import { PAGE_ORDER } from 'common/enum/pagination/page-order.enum';
 
 /**
  * todo: create ony string validator to prop "Order"

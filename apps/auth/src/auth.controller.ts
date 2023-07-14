@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { EventPattern } from '@nestjs/microservices';
-import { EventPatterns } from 'common/enum/event-pattern.enum';
+import { EventPatterns } from 'common/enum/patterns/event-pattern.enum';
 
 @Controller('test')
 export class AuthController {

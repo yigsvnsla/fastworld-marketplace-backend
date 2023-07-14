@@ -17,7 +17,7 @@ import { RolesGuard } from '../../../../../guards/roles.guard';
 import { Headers } from '@nestjs/common';
 import { Response } from 'express';
 import { UserService } from './users.service';
-import { USER_ROLE } from 'common/enum/user-role.enum';
+import { USER_ROLE } from 'common/enum/roles/user-role.enum';
 import { QueryParamsDto } from 'common/dto/pagination/query-params.dto';
 import { CreateUserDto } from 'common/dto/user/create-user.dto';
 

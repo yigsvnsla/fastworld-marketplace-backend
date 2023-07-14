@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { UserDto } from 'common/dto/user/user.dto';
-import { ClientPattern } from 'common/enum/clients-pattern.enum';
+import { ClientPattern } from 'common/enum/patterns/clients-pattern.enum';
 
 @Injectable()
 export class AuthService {

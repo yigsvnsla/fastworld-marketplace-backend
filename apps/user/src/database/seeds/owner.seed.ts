@@ -2,7 +2,7 @@ import { DataSource, Repository } from 'typeorm';
 import { Seeder, SeederFactoryManager } from 'typeorm-extension';
 import { User } from '../../entitys/user.entity';
 import { Role } from '../../entitys/roles.entity';
-import { USER_ROLE } from 'common/enum/user-role.enum';
+import { USER_ROLE } from 'common/enum/roles/user-role.enum';
 import { Profile } from '../../entitys/profile.entity';
 import * as bcrypt from 'bcrypt';
 

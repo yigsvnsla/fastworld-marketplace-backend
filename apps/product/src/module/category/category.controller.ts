@@ -17,7 +17,7 @@ import { Public } from '../../../../../decorators/public.decorator';
 import { RolesGuard } from '../../../../../guards/roles.guard';
 import { CategoryService } from './category.service';
 import { QueryParamsDto } from 'common/dto/pagination/query-params.dto';
-import { USER_ROLE } from 'common/enum/user-role.enum';
+import { USER_ROLE } from 'common/enum/roles/user-role.enum';
 import { CreateCategoriesDto } from 'common/dto/category/create-category.dto';
 import { UpdateCategoryDto } from 'common/dto/category/update-category.dto';
 

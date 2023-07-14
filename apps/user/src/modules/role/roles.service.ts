@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { CreateRoleDto } from 'common/dto/role/create-role.dto';
 import { RoleDto } from 'common/dto/role/role.dto';
 import { Role } from '../../entitys/roles.entity';
-import { USER_ROLE } from 'common/enum/user-role.enum';
+import { USER_ROLE } from 'common/enum/roles/user-role.enum';
 
 @Injectable()
 export class RoleService {

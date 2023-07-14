@@ -1,4 +1,4 @@
-import { ACTION_SESSION } from 'common/enum/actions-session.enum';
+import { ACTION_SESSION } from 'common/enum/actions/actions-auth.enum';
 import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, CreateDateColumn } from 'typeorm';
 
 @Entity()
