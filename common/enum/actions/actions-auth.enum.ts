@@ -1,4 +1,4 @@
-export enum ACTION_SESSION {
+export enum ACTION_AUTH {
   LOGIN,
   LOGOUT
 }

@@ -6,3 +6,4 @@ export enum PRODUCTS_PATTERN {
     UPDATE = "UPDATE_PRODUCT",
     DELETE = "DELETE_PRODUCT",
 }
+// todo: change name to product_action

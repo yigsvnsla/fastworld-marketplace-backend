@@ -16,9 +16,7 @@ import { ProductsModule } from './modules/products/products.module';
     ProductsModule,
     CategoriesModule,
     ClientsModule.register([
-      AUTH_CLIENT_PROVIDER,
       USER_CLIENT_PROVIDER,
-      PRODUCT_CLIENT_PROVIDER
     ]),
     // TypeOrmModule.forRoot(DATA_SOURCE_OPTIONS),
     // ConfigModule.forRoot({

@@ -1,4 +1,4 @@
-import { ACTION_SESSION } from 'common/enum/actions/actions-auth.enum';
+import { ACTION_AUTH } from 'common/enum/actions/actions-auth.enum';
 import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, CreateDateColumn } from 'typeorm';
 
 @Entity()
@@ -20,7 +20,7 @@ export class HistorySession {
 
   // ! DELETE HOW IMPLEMENT RELATIONAL DATABASE
   @Column({
-    default: ACTION_SESSION.LOGIN
+    default: ACTION_AUTH.LOGIN
   })
   public action: number
 }
