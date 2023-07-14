@@ -26,7 +26,6 @@ import { HistorySession } from './entitys/history-sessions.entity';
     // }),
   ],
   providers: [
-    AuthService,
     // ConfigService,
     // LocalStrategy,
     // JwtStrategy,
@@ -35,6 +34,7 @@ import { HistorySession } from './entitys/history-sessions.entity';
     //   useClass: JwtAuthGuard,
     // },
   ],
-  controllers: [AuthController],
+  controllers: [
+    AuthController, AuthController],
 })
 export class AuthModule { }

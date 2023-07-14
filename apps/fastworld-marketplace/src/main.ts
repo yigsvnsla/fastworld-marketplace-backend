@@ -33,7 +33,7 @@ async function bootstrap() {
   // const configService = app.get(ConfigService);
   // const port = configService.get('app.port');
     
-  await app.listen(3000);
-  log(`Server Running in to port:${3000}`);
+  await app.listen(3500);
+  log(`Server Running in to port:${3500}`);
 }
 bootstrap();

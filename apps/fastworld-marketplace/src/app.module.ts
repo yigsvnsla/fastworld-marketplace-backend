@@ -1,3 +1,4 @@
+import { AuthModule } from './modules/auth/auth.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
@@ -11,6 +12,7 @@ import { ProductsModule } from './modules/products/products.module';
 
 @Module({
   imports: [
+    AuthModule,
     ProductsModule,
     CategoriesModule,
     ClientsModule.register([
