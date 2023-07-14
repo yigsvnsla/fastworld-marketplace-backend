@@ -15,7 +15,7 @@ import { HistorySession } from './entitys/history-sessions.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot(AUTH_SOURCE_OPTIONS),
-    //TypeOrmModule.forFeature([HistorySession]),
+    TypeOrmModule.forFeature([HistorySession]),
     ClientsModule.register([AUTH_CLIENT_PROVIDER]),
     // JwtModule.register({
     //   global: true,
@@ -26,6 +26,7 @@ import { HistorySession } from './entitys/history-sessions.entity';
     // }),
   ],
   providers: [
+    AuthService,
     // ConfigService,
     // LocalStrategy,
     // JwtStrategy,
