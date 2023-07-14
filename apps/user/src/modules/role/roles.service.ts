@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { CreateRoleDto } from 'common/dto/role/create-role.dto';
 import { RoleDto } from 'common/dto/role/role.dto';
 import { Role } from '../../entitys/roles.entity';
+import { USER_ROLE } from 'common/enum/user-role.enum';
 
 @Injectable()
 export class RoleService {
@@ -16,7 +17,7 @@ export class RoleService {
     return roles.map((role) => new RoleDto(role));
   }
 
-  public async findRole(type: string) {
+  public async findRole(type: USER_ROLE) {
     const role = await this.roleRepo.findOneBy({ type });
     if (!role) throw new NotFoundException();
     return new RoleDto(role);
