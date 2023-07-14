@@ -46,7 +46,7 @@ import { DataSourceOptionsCustom } from 'types/data-source.type';
 // };
 export const PRODUCT_SOURCE_OPTIONS: DataSourceOptionsCustom = {
   type: 'sqlite',
-  database: '../../../../db/product/product.db.sqlite',
+  database: '/db/product/product.db.sqlite',
   synchronize: true,
   migrationsRun: true,
   autoLoadEntities: true,

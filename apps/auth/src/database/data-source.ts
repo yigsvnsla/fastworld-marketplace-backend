@@ -47,7 +47,7 @@ import { HistorySession } from '../entitys/history-sessions.entity';
 // };
 export const AUTH_SOURCE_OPTIONS: DataSourceOptionsCustom = {
   type: 'sqlite',
-  database: '../../../../db/auth/auth.db.sqlite',
+  database: '/db/auth/auth.db.sqlite',
   synchronize: true,
   migrationsRun: true,
   autoLoadEntities: true,

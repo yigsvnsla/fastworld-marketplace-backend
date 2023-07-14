@@ -52,7 +52,7 @@ import profileFactory from './factories/profile.factory';
 
 export const USER_SOURCE_OPTIONS: DataSourceOptionsCustom = {
   type: 'sqlite',
-  database: '../../../../db/user/user.db.sqlite',
+  database: '/db/user/user.db.sqlite',
   synchronize: true,
   migrationsRun: true,
   autoLoadEntities: true,
