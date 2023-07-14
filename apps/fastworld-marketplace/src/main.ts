@@ -30,10 +30,10 @@ async function bootstrap() {
   //   .build();
   // const document = SwaggerModule.createDocument(app, config);
   // SwaggerModule.setup('api', app, document);
-  const configService = app.get(ConfigService);
-  const port = configService.get('app.port');
+  // const configService = app.get(ConfigService);
+  // const port = configService.get('app.port');
     
-  await app.listen(port);
-  log(`Server Running in to port:${port}`);
+  await app.listen(3000);
+  log(`Server Running in to port:${3000}`);
 }
 bootstrap();

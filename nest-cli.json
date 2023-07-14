@@ -1,24 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/fastworld-marketplace-backend/src/",
+  "sourceRoot": "apps/fastworld-marketplace/src/",
   "monorepo": true,
-  "root": "apps/fastworld-marketplace-backend",
+  "root": "apps/fastworld-marketplace",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/fastworld-marketplace-backend/tsconfig.app.json"
+    "tsConfigPath": "apps/fastworld-marketplace/tsconfig.app.json"
   },
   "projects": {
-    "fastworld-marketplace-backend": {
+    "fastworld-marketplace": {
       "type": "application",
-      "root": "apps/fastworld-marketplace-backend",
+      "root": "apps/fastworld-marketplace",
       "entryFile": "main",
-      "sourceRoot": "apps/fastworld-marketplace-backend/src",
+      "sourceRoot": "apps/fastworld-marketplace/src",
       "compilerOptions": {
         "webpackConfigPath": "webpack.config.js",
         "deleteOutDir": true,
-        "tsConfigPath": "apps/fastworld-marketplace-backend/tsconfig.app.json"
+        "tsConfigPath": "apps/fastworld-marketplace/tsconfig.app.json"
       }
     },
     "auth": {

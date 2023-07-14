@@ -10,7 +10,7 @@ import { Type } from 'class-transformer';
 import { CreateProfileDto } from '../profile/create-profile.dto';
 import { Relation } from 'typeorm';
 
-export default class CreateUserDto {
+export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   public username: string;
