@@ -6,7 +6,7 @@ import { ClientPattern } from 'common/enum/patterns/clients-pattern.enum';
 @Injectable()
 export class AuthService {
   constructor(
-    @Inject(`${ClientPattern.AUTH_SERVICE}`) private client: ClientProxy
+    
   ) { }
 
   public validateUser(username: string, password: string) {

@@ -24,7 +24,6 @@ import { AUTH_SOURCE_OPTIONS } from './database/data-source';
     // }),
   ],
   providers: [
-    AuthService,
     // ConfigService,
     // LocalStrategy,
     // JwtStrategy,
@@ -33,6 +32,7 @@ import { AUTH_SOURCE_OPTIONS } from './database/data-source';
     //   useClass: JwtAuthGuard,
     // },
   ],
-  controllers: [AuthController],
+  controllers: [
+    AuthController, AuthController],
 })
 export class AuthModule { }
