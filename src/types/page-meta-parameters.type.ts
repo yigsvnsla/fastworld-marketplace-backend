@@ -9,7 +9,3 @@ export interface PageMetaParameters {
 export type Order<T extends string | number> = {
   [key: string]: T | Order<T> | string;
 };
-
-// export type Order = {
-//   [key: string]: T | NestedKeyValueObject<T>;
-// };

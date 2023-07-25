@@ -1,0 +1,14 @@
+{
+    "_id": "c5d50e0f-df92-464d-bb74-8b0d4123481b",
+    "name": "ecommerce",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-07-15T17:30:28.779Z",
+    "modified": "2023-07-15T17:30:28.779Z",
+    "data": [
+        {
+            "name": "URL",
+            "value": "[::1]:3500/api/"
+        }
+    ]
+}

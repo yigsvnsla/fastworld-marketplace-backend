@@ -24,7 +24,7 @@ export class PageOptionsDto {
   @IsOptional()
   readonly take?: number = 10;
 
-  get skip(): number {
+  public get skip(): number {
     return (this.page - 1) * this.take;
   }
 }

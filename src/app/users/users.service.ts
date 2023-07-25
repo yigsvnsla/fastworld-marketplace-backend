@@ -43,14 +43,15 @@ export default class UserService {
   }
 
   public async findAllUser(queryParams: QueryParamsDto) {
+
     const [entities, count] = await Promise.all([
       this.userRepo.find(queryParams),
-      this.userRepo.count(),
+      this.userRepo.count(queryParams),
     ]);
 
     const pageMetaDto = new PageMetaDto({
-      itemCount: count,
       pageOptionsDto: queryParams,
+      itemCount: count,
     });
 
     return new PageDto(entities, pageMetaDto);

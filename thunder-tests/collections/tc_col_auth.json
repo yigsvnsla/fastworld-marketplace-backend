@@ -1,0 +1,28 @@
+{
+    "_id": "969da868-05f6-43e1-861a-9360309d3fa6",
+    "colName": "auth",
+    "created": "2023-07-15T17:33:02.790Z",
+    "sortNum": 20000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "47e5bd93-795f-461e-8088-3e5748782cdc",
+            "colId": "969da868-05f6-43e1-861a-9360309d3fa6",
+            "containerId": "",
+            "name": "PostSingin",
+            "url": "{{URL}}auth",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-07-15T17:33:19.734Z",
+            "modified": "2023-07-15T17:36:12.918Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"owner\",\n  \"password\":\"owner123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

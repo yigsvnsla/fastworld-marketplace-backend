@@ -1,0 +1,71 @@
+{
+    "_id": "52dec567-4fd0-4bea-9cd6-30a05a4c85a3",
+    "colName": "products",
+    "created": "2023-07-15T17:31:10.784Z",
+    "sortNum": 10000,
+    "folders": [
+        {
+            "_id": "23720788-6823-4ce8-b79e-fca1e9a36a9f",
+            "name": "categories",
+            "containerId": "",
+            "created": "2023-07-15T17:31:21.303Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ada2a5f4-0f55-4ce2-bad3-3626b42be9c4",
+            "colId": "52dec567-4fd0-4bea-9cd6-30a05a4c85a3",
+            "containerId": "23720788-6823-4ce8-b79e-fca1e9a36a9f",
+            "name": "GetCategories",
+            "url": "{{URL}}categories?relations[0]=parent&relations[1]=children",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-07-15T17:31:55.790Z",
+            "modified": "2023-07-16T05:36:37.965Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "relations[0]",
+                    "value": "parent",
+                    "isPath": false
+                },
+                {
+                    "name": "relations[1]",
+                    "value": "children",
+                    "isPath": false
+                },
+                {
+                    "name": "take",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "3e13d74d-64b7-4d84-aa57-a277ac3fd67e",
+            "colId": "52dec567-4fd0-4bea-9cd6-30a05a4c85a3",
+            "containerId": "23720788-6823-4ce8-b79e-fca1e9a36a9f",
+            "name": "PostCreateCategory",
+            "url": "{{URL}}categories",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-07-15T17:32:33.614Z",
+            "modified": "2023-07-15T17:38:43.469Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"libro\",\n  \"description\":\"este es un libro\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJvd25lciIsInBhc3N3b3JkIjoiJDJiJDEwJHpHL2FyR0RBbWZoMXRoS3pqVC5Bbi5lNDdaank4RjcyZzRHYlBEMVRMVDJYa2hacnpIai9DIiwicm9sZSI6eyJpZCI6MSwidHlwZSI6ImFkbWluIiwiZGVzY3JpcHRpb24iOiJhZG1pbiBwZXJtaXNzaW9ucyJ9LCJpc0FjdGl2ZSI6dHJ1ZSwic3ViIjoxLCJpYXQiOjE2ODk0NDI1NzIsImV4cCI6MTY4OTQ0Mjg3Mn0.AlROuM_iXbRPIcpu6MF42lXSMSFzkNg5V4cirXv1fTE"
+            },
+            "tests": []
+        }
+    ]
+}

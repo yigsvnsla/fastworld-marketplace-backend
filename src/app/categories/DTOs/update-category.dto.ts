@@ -13,9 +13,9 @@ export default class UpdateCategoryDto {
   @Transform(({ value }) => value.toLowerCase())
   public name: string;
 
-  @IsOptional()
-  @IsNotEmpty()
-  @IsString()
-  @Transform(({ value }) => value.toLowerCase())
-  public description: string;
+  // @IsOptional()
+  // @IsNotEmpty()
+  // @IsString()
+  // @Transform(({ value }) => value.toLowerCase())
+  // public description: string;
 }

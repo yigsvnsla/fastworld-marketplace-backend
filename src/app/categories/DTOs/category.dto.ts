@@ -25,10 +25,10 @@ export default class CategoryDto {
   @IsString()
   public name: string;
 
-  @IsDefined()
-  @IsNotEmpty()
-  @IsString()
-  public description: string;
+  // @IsDefined()
+  // @IsNotEmpty()
+  // @IsString()
+  // public description: string;
 
   @Exclude()
   @IsOptional()

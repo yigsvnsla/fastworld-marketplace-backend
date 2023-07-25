@@ -13,7 +13,7 @@ import UpdateCategoryDto from './DTOs/update-category.dto';
 export default class CategoriesService {
   constructor(
     @InjectRepository(Category) private categoriesRepo: Repository<Category>,
-  ) {}
+  ) { }
 
   public async findAll(queryParams: QueryParamsDto) {
     const [entities, count] = await Promise.all([
@@ -29,7 +29,7 @@ export default class CategoriesService {
     return new PageDto(entities, pageMetaDto);
   }
 
-  public async findById(id, queryParams: QueryParamsDto) {
+  public async findById(id: number, queryParams: QueryParamsDto) {
     const category = await this.categoriesRepo.findOne({
       ...queryParams,
       where: { id },
@@ -39,12 +39,11 @@ export default class CategoriesService {
   }
 
   public async create(category: CreateCategoriesDto) {
+
+    console.log(category);
+    return category
     const findNewCategory = await this.categoriesRepo.findOneBy(category);
-
-    if (findNewCategory) {
-      throw new NotAcceptableException('Category Already Exist');
-    }
-
+    if (findNewCategory) throw new NotAcceptableException('Category Already Exist');
     const createCategory = this.categoriesRepo.create(category);
     const createdCategory = await this.categoriesRepo.save(createCategory);
     return new CategoryDto(createdCategory);

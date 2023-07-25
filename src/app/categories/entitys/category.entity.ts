@@ -24,8 +24,8 @@ export default class Category {
   @Column()
   public name: string;
 
-  @Column()
-  public description: string;
+  // @Column()
+  // public description: string;
 
   @ManyToOne(() => Category, (category) => category.children, {
     nullable: true,
